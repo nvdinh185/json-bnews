@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>VinaEnter EDU - Đã học là làm được</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="main">
+		<div class="page">
+
+			<div class="header"></div>
+
+			<div class="content">
+
+				<div class="leftpanel"></div>
+
+				<div class="rightpanel">
+					<div class="rightbody">
+						<h1 class="title" id="cat-name">Tin tức >> Thời sự</h1>
+						<div class="items-new">
+							<ul id="list-news-by-cat"></ul>
+
+							<div class="paginator">
+								<a href="">Trang 1</a> |
+								<a href="" class="active">Trang 2</a> |
+								<a href="">Trang 3</a> |
+								<a href="">Trang 4</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clr"></div>
+			</div>
+
+			<div class="footer"></div>
+
+		</div>
+	</div>
+
+	<script src="lib/jquery-3.6.3.min.js"></script>
+	<script src="lib/axios.min.js"></script>
+	<script src="js/danhmuc.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".header").load("./inc/header.html");
+			$(".leftpanel").load("./inc/leftpanel.html");
+			$(".footer").load("./inc/footer.html");
+		});
+	</script>
+</body>
+
+</html>
