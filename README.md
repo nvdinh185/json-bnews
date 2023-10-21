@@ -1,3 +1,4 @@
+```js
 const news = [
     {
       "id": "1",
@@ -103,3 +104,4 @@ const categories = [
       "name": "Du học Nhật Bản"
     }
   ]
+  ```
