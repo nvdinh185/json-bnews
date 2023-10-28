@@ -1,5 +1,5 @@
 {
-  "bnews": [
+  "news": [
     {
       "id": "1",
       "description": "Đền thiêng Sefa Utaki ở Okinawa",
@@ -85,7 +85,7 @@
       "catId": "4"
     }
   ],
-  "bcategories": [
+  "cat": [
     {
       "id": "1",
       "name": "Toàn cảnh Nhật Bản"
