@@ -2,6 +2,7 @@ async function getData() {
     const listNewsElement = $("#list-news");
 
     try {
+        // Lấy danh sách tin tức
         var listNews = await axios.get('http://localhost:3000/news');
         listNews = listNews.data;
 

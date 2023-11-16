@@ -13,6 +13,7 @@ async function getData() {
 
     const detailElement = $("#detail");
     try {
+        // lấy chi tiết tin theo dId
         var newsById = await axios.get(`http://localhost:3000/news/${dId}`);
         newsById = newsById.data;
 
@@ -24,6 +25,33 @@ async function getData() {
                 </div>
             </div>
         `);
+
+        var listNews = await axios.get('http://localhost:3000/news');
+        listNews = listNews.data;
+
+        // Lọc ra những tin tức liên quan (là những tin cùng danh mục nhưng khác tin đang xem)
+        var listRelatedNews = listNews.filter(function (news) {
+            return (news.catId === newsById.catId && news.id !== newsById.id);
+        })
+        // console.log(listRelatedNews);
+        var listRelatedElement = $('#list-related');
+
+        listRelatedNews.forEach(function (news) {
+            const liElement = $('<li></li>');
+            liElement.html(`
+                <h2>
+                    <a href="chitiet.html?did=${news.id}" title="">${news.description}</a>
+                </h2>
+                <div class="item">
+                    <a href="chitiet.html?did=${news.id}" title=""><img src=${news.image} alt=${news.image}></a>
+                    <p>${news.detail}</p>
+                    <div class="clr"></div>
+                </div>
+            `);
+
+            listRelatedElement.append(liElement);
+
+        })
     } catch (err) {
         console.log('Lỗi ' + err);
         detailElement.append(`<p style='color: red; font-style: italic;'>Xảy ra lỗi khi lấy dữ liệu!<p/>`);

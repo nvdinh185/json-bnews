@@ -1,7 +1,7 @@
 async function getData() {
     const listCatElement = $("#list-cat");
     try {
-
+        // Lấy danh sách danh mục tin
         var listCat = await axios.get('http://localhost:3000/cat');
         listCat = listCat.data;
 

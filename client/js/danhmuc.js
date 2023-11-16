@@ -15,6 +15,7 @@ async function getData() {
         var listNews = await axios.get('http://localhost:3000/news');
         listNews = listNews.data;
 
+        // Lọc những tin có cùng danh mục tin là cId
         var listNewsByCat = listNews.filter(function (news) {
             return news.catId === cId;
         })
@@ -36,6 +37,7 @@ async function getData() {
 
         })
 
+        // Lấy danh mục tin theo cId
         var catById = await axios.get(`http://localhost:3000/cat/${cId}`);
         catById = catById.data;
 
